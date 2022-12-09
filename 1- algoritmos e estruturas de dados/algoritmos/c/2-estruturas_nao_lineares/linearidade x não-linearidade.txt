@@ -1,0 +1,53 @@
+linearidade x não-linearidade
+
+-Alocação
+
+.quando criamos uma variável reservamos (alocamos) um local na memória RAM para essa variável.
+.cada tipo de dado demanda um determinado espaço para que a variável seja colocada em memória
+
+-Alocação em memória RAM
+
+.Como um programa é alocado na memória?
+O sistema operacional é responsável por alocar esse espaço em memória para que o programa seja colocado lá. Para o processador utilizar o programa ele precisa estar em memória RAM. Ou seja, o programa é trazido do disco pelo sistema operacional para a memória RAM para que o processador tenha acesso a ele. O processador não executa coisas que estão no disco, e sim coisas que estão em memória RAM.
+
+.Como variáveis são alocadas em memória?
+Dentro do espaço do programa vai ter um espaço para as variáveis. Mas as variáveis podem ser alocadas de formas diferentes: contínua, não-contínua, estática, dinâmica.
+
+.Dados são todos alocados continuamente?
+Podem ser alocados de forma contínua ou não-contínua. Alocados de forma contínua significa que são colocados um ao lado do outro, por exemplo, vetores são alocados continamente pois cada elemento é guardado em sequência. Posição 1, ao lado da posição 2, ao lado da posição 3... Por isso são de fácil acesso. Já uma alocação não-contínua a gente pode guardar os elementos em diferentes partes da memória e acessar eles com ponteiros.
+
+.Alocação é estática ou dinâmica?
+Uma alocação estática é quando eu tenho que são alocados desde o início do meu programa na memória RAM. Já a alocação dinãmica ela se refere à alocação sobre demanda, ou seja, em determinado momento do programa pode ser que eu precise alocar mais memória para armazenar mais dados. É essa possibilidade de poder alocar informações, dados, variáveis em tempo de execução. A alocação dinâmica se refere em grande parte a dados alocados não contínuamente (é não-contínuamente por que eu aloco eles durante o programa)
+
+____________________________
+| Variáveis Locais          |  ---> Pilha (Stack)
+|---------------------------|
+| Memória Livre             |  ---> Heap
+|---------------------------|
+| Variáveis Locais          |  ---|
+|---------------------------|     |
+| Instruções do Programa    |     |-----> Área de Armazenamento Fixo
+|---------------------------|     |
+| Variáveis Estáticas       |  ---|
+|___________________________|
+
+
+Área de Armazenamento Fixo: coisas que não mudam no programa. Não quer dizer que as variáveis não mudam de valor, e sim, que elas já existem e estão alocadas desde o início do programa. Não precisamos fazer a alocação delas no meio do programa. Eu posso mudar o valor da variável mas não mudo sua estrutura, seu tipo.
+
+Memória Livre/Heap: onde armazenamos nossas entruturas que normalmente não são contínuas e são dinâmicas. Estruturas que podem ser alocadas e desalocadas em tempo de execução.
+
+Pilha/Stack: variáveis locais da função, os próprios parâmentros das funções. Quando eu chamo uma função, essas variáveis só existem enquanto a função estiver executando. Quando a função para a execução, as variáveis deixam de existir, se chamar novamente a função as variáveis são criadas novamente. São armazenadas como uma pilha(stack), elas existem em determinados momentos do programa.
+
+O que é melhor?
+.Alocar continuamente todos os dados do meu programa?
+.Alocar dinamicamente conforme demanda?
+
+Depende, dá pra saber todos dados que serão armazenados no programa? Se sim, então é melhor uma alocação contínua. Caso não dê para saber então a alocação sob demanda é melhor. A alocação adequada traz um desempenho satisfatório.
+
+Linearidade ou Não Linearidade?
+
+.Estruturas Lineares: são aquelas em que elementos estão alocados lado a lado na memória RAM. Ex: arrays, vetores
+.Estruturas não-lineares: são aquelas em que os elemtnos estão espalhados na memória, ou seja, não estão sequenciais. Como encontrar essas estruturas? Com ponteiros que apontam seu endereço de memória. Cada estrutura tem um ponteiro que aponta para si na memória RAM.
+
+Por que precisamos de ponteiros?
+Precisamos de ponteiros e structs para criar estruturas de dados não lineares. Ex.: listas, pilhas, filas, árvores, etc. Além disso cada estrutura dessa tem variações para criar estruturas semelhantes e otimizadas.
