@@ -1,0 +1,20 @@
+Listas encadeadas
+É implementada com a utlização de:
+.Structs: que representam cada um dos elementos da lista
+.Ponteiros: realizam o encadeamento entre um elemento e outro
+.Alocação dinâmica: responsável por reservar espaço em tempo de execução para novos elemtnos da lista encadeada
+
+Implementação:
+
+--> elemento --> elemento --> elemento --> elemento -->
+
+--> (ponteiros)
+elemento (structs)
+
+Pontos positivos:
+.Alocação sob-demanda
+.Inserção e remoção no meio da estrutura não necessita de realocação dos demais elementos já existentes.
+
+Pontos negativos:
+.Estruturas não estão linearmente na memória, logo, a busca por elemento se torna mais onerosa
+.Inserção e remoção pode se tornar trabalhosa se a posição requerida está muito distante, pois, há a necessidade de percorrer toda a lista para inserir ou remover
