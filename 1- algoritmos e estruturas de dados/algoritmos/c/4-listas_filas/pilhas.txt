@@ -1,0 +1,47 @@
+Pilhas:
+-Para inserirmos um elemento no topo temos que percorrer todos os elementos para adicionar um novo. A solução é guardar a referêcia ao último elemento.
+
+   ^
+   |proximo
+   |
+elemento
+   ^
+   |proximo
+   |
+elemento
+   ^
+   |proximo
+   |
+elemento
+   ^
+   |
+início: guarda o primeiro elemento
+
+Implementação eficiente:
+Para inserir quando eu crio um novo elemento faço ele apontar para o último elemento. Depois faço o ponteiro do último elemento apontar para o novo elemento
+
+ultimo                        |     ultimo -----> novo elemento
+   |       novo elemento      |                         |
+   v                          |     elemento  <----------
+elemento                      |        |
+   |                          |        v
+   v                          |     elemento
+elemento                      |
+
+
+Para remover, o último elemento perde a referência e ela vai apontar para onde o ultimo aponta
+
+ultimo				| perde a referencia
+   |					|  |                    ultimo
+   v					|  |				   |
+elemento				|  |--> elemento		   |
+   |					|          |		   |
+   | proximo			|          |   proximo     |
+   v					|          v		   |
+elemento				|       elemento  <--------|
+   |					|          |
+   | proximo			|	     |   proximo
+   v					|	     v
+elemento				|       elemento
+   |					|	     |
+   v proximo			|	     v   proximo

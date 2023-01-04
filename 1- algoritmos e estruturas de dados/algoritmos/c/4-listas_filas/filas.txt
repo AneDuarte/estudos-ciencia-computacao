@@ -1,0 +1,27 @@
+Filas
+-Filas são um caso particular de listas
+-Um elemento é encadeado de outro assim como listas:
+    .no máx 1 elemento subsequente
+    .no máx 1 elemento antecedente
+-Diferente da listas, em um fila os elementos só podem ser inseridos no final e só podem ser removidos no início.
+
+-------- para adicionar novo elemento -------
+                                            |
+                                            v
+  item1    item2    item3    item4    item5
+^
+|
+----------para remover um elemento----------
+
+Para implementar uma fila usamos:
+.Structs: cada elemento da fila
+.Ponteiros: fazem o encadeamento entre os elementos
+.Alocação dinâmica: reserva espaço em tempo de execução para novos elementos da lista encadeada
+
+Pontos positivos:
+.Alocação sob-demanda
+.Inserção e remoção são feitos em locais específicos da estrutura e portanto facilitam a implementação com foco no desempenho
+
+Pontos negativos:
+.Estruturas não estão linearmente na memória (a busca fica mais custosa)
+.Não permite inserçãoo em qualquer lugar
